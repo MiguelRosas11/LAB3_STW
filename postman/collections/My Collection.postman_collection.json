@@ -1,0 +1,258 @@
+{
+  "info": {
+    "_postman_id": "7947b784-197a-40fb-be91-ffa7531a9ecf",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Happy Path",
+      "item": [
+        {
+          "name": "Get random image by breed (ID)",
+          "id": "431e19da-3e85-4c98-a4d6-e67371dca1ea",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breed/{{id}}/images/random",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breed",
+                "{{id}}",
+                "images",
+                "random"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /breeds/list/all",
+          "id": "f79ecb3e-bac0-4895-b54b-9370b922efea",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/{{resource}}/list/all",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "{{resource}}",
+                "list",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all images by breed",
+          "id": "fc947c27-9b7d-47cb-b285-b7428e148525",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breed/{{id}}/images",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breed",
+                "{{id}}",
+                "images"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get sub-breeds by breed",
+          "id": "83582952-bac4-4a8f-b82c-dfb8f79952f8",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breed/{{id}}/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breed",
+                "{{id}}",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get random image by sub-breed",
+          "id": "340810b7-c66e-4eba-964f-ba35c31c6176",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breed/hound/afghan/images/random",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breed",
+                "hound",
+                "afghan",
+                "images",
+                "random"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get multiple random images",
+          "id": "cb479e7f-e26f-42cc-8e4b-c17e25a3d3f5",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breeds/image/random/{{query}}",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breeds",
+                "image",
+                "random",
+                "{{query}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "24742654-c2bf-4a15-bf80-9bfa22adb186"
+    },
+    {
+      "name": "Errores intencionales",
+      "item": [
+        {
+          "name": "404 - Breed not found",
+          "id": "0a36bac8-0da9-4a8e-b951-9538e22e9adb",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breed/noexiste/images",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breed",
+                "noexiste",
+                "images"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400/Invalid request - Malformed URL",
+          "id": "d1ba64a1-9d94-400b-b78e-a6386758d3a0",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/breed//images",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "breed",
+                "",
+                "images"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "401 - Unauthorized (test endpoint)",
+          "id": "35fa9dc6-64e6-4c88-8fbb-d0126d3d3112",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://httpbin.org/status/401",
+              "protocol": "https",
+              "host": [
+                "httpbin",
+                "org"
+              ],
+              "path": [
+                "status",
+                "401"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "403 - Forbidden (test endpoint)",
+          "id": "ec283e29-fc4c-40d9-bd57-5179ab29dba2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://httpbin.org/status/403",
+              "protocol": "https",
+              "host": [
+                "httpbin",
+                "org"
+              ],
+              "path": [
+                "status",
+                "403"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "8bf8990f-226f-41ee-8e09-1070abf5e111"
+    }
+  ]
+}
